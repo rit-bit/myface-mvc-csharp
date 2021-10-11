@@ -3,3 +3,10 @@
 @{
     Layout = "_Layout";
 }
+
+@foreach (var post in @Model.Posts)
+{
+    <div>
+        <p>@post.PostedBy.DisplayName: @post.Message. @post.PostedAt.ToString("t")</p>
+    </div>
+}
