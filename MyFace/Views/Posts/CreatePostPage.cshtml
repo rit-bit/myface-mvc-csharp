@@ -3,3 +3,14 @@
 @{
     Layout = "_Layout";
 }
+
+<h1>Write a new post</h1>
+<form action="/posts/create" method="POST">
+    <label for="message">Message: </label>
+    <input type="text" name="Message" id="message" maxlength="140">
+    <br>
+    <label for="imageURL">Image URL: </label>
+    <input type="url" name="ImageUrl" id="imageURL">
+    <br>
+    <input type="submit" value="Submit">
+</form>
