@@ -4,9 +4,13 @@
     Layout = "_Layout";
 }
 
+<table>
 @foreach (var post in @Model.Posts)
 {
-    <div>
-        <p>@post.PostedBy.DisplayName: @post.Message. @post.PostedAt.ToString("t")</p>
-    </div>
+    var altText = $"Profile picture of {post.PostedBy.DisplayName}";
+    //Console.WriteLine(altText);
+        <tr>
+        <td><img src=@post.PostedBy.ProfileImageUrl alt=@altText> <b>@post.PostedBy.DisplayName:</b> @post.Message. @post.PostedAt.ToString("t")</td>
+        </tr>
 }
+</table>
