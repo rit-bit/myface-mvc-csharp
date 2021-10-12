@@ -3,16 +3,17 @@
 @{
     Layout = "_Layout";
 }
+<main>
+    <a href="/posts/create">Make a new post</a>
 
-<a href="/posts/create">Make a new post</a>
-
-<table>
-@foreach (var post in @Model.Posts)
-{
-    var altText = $"Profile picture of {post.PostedBy.DisplayName}";
-    //Console.WriteLine(altText);
-        <tr>
-        <td><img src=@post.PostedBy.ProfileImageUrl alt=@altText> <b>@post.PostedBy.DisplayName:</b> @post.Message. @post.PostedAt.ToString("t")</td>
-        </tr>
-}
-</table>
+    <table>
+        @foreach (var post in @Model.Posts)
+        {
+            var altText = $"Profile picture of {post.PostedBy.DisplayName}";
+            //Console.WriteLine(altText);
+            <tr>
+                <td><img src=@post.PostedBy.ProfileImageUrl alt=@altText style="width:50px"> <b>@post.PostedBy.DisplayName:</b> @post.Message. @post.PostedAt.ToString("t")</td>
+            </tr>
+        }
+    </table>
+</main>
