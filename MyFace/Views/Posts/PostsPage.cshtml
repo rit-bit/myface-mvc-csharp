@@ -24,7 +24,7 @@
             <a href=@prevLink>Prev</a>
         }
         var pagesRequired = (decimal) Model.TotalPosts / Model.PageSize;
-        var lastPageNumber = Math.Ceiling(pagesRequired) - 1;
+        var lastPageNumber = (int) (Math.Ceiling(pagesRequired) - 1);
         // NB: lastPageNumber will not necessarily be correct if pageSize is changed and not reset to pageNumber = 0 
         if (Model.PageNumber < lastPageNumber)
         {
