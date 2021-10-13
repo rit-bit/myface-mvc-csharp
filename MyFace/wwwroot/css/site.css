@@ -25,13 +25,17 @@ li {
     float: left;
 }
 
-a {
+.nav-list-item {
+    height: 26px;
+}
+
+.a-button {
     background-color: steelblue;
     box-shadow: 0 3px 0 blue;
     color: white;
     padding: 0.2em 0.5em;
-    margin: 0.5rem 1rem;
-    position: relative;
+    margin: 40px 10px 40px;
+    /*position: relative;*/
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -51,36 +55,37 @@ a:active {
     margin-right: auto;
     width: 50%;
 }
+
 .bottom-right {
     bottom:5px;
     right:5px;
     position: absolute;
 }
 
-/*Small devices (landscape phones, 576px and up)*/
+/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     body {
-        background-color: green;
+        
     }
 }
 
-/* Medium devices (tablets, 768px and up)*/
+/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     body {
-        background-color: yellow;
+        
     }
 }
 
-/* Large devices (desktops, 992px and up)*/
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     body {
-        background-color: orange;
+        
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up)*/
+/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     body {
-        background-color: red;
+        
     }
 }
