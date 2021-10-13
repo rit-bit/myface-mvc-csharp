@@ -10,3 +10,22 @@ th, td {
 body {
     background-color: dodgerblue;
 }
+
+a {
+    background-color: steelblue;
+    box-shadow: 0 3px 0 blue;
+    color: white;
+    padding: 0.2em 0.5em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    background-color: royalblue;
+}
+
+a:active {
+    box-shadow: none;
+    top: 3px;
+}

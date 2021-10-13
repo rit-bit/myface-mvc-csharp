@@ -11,6 +11,8 @@ namespace MyFace.Repositories
     {
         IEnumerable<Post> GetAll(int pageNumber, int pageSize);
         void CreatePost(CreatePostRequestModel postModel);
+
+        public int Count();
     }
     
     public class PostsRepo : IPostsRepo
@@ -28,7 +30,7 @@ namespace MyFace.Repositories
                 .Include(p => p.User)
                 .Include(p => p.Interactions)
                 .OrderByDescending(p => p.PostedAt)
-                .Skip((pageNumber - 1) * pageSize)
+                .Skip(pageNumber * pageSize)
                 .Take(pageSize);
         }
 
@@ -42,6 +44,11 @@ namespace MyFace.Repositories
                 UserId = postModel.UserId,
             });
             _context.SaveChanges();
+        }
+
+        public int Count()
+        {
+            return _context.Posts.Count();
         }
     }
 }
