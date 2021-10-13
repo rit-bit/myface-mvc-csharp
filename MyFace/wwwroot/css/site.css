@@ -1,15 +1,29 @@
 /* Extra small devices (portrait phones, less than 576px) */
 table, th, td {
-    border: 10px solid dodgerblue;
+    border: 4px solid dodgerblue;
     border-collapse: separate;
     border-radius: 20px;
+    border-spacing:0 15px;
+}
+td + td {
+    margin-left: 0;
 }
 th, td {
     background-color: lightblue;
     padding: 15px;
+    position: relative
 }
 body {
     background-color: dodgerblue;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li {
+    float: left;
 }
 
 a {
@@ -30,6 +44,18 @@ a:hover {
 a:active {
     box-shadow: none;
     top: 3px;
+}
+
+.centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.bottom-right {
+    bottom:5px;
+    right:5px;
+    position: absolute;
 }
 
 /*Small devices (landscape phones, 576px and up)*/
