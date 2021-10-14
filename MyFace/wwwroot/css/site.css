@@ -1,32 +1,43 @@
-/* Extra small devices (portrait phones, less than 576px) */
+/* Extra small devices (portrait phones, less than 430px) */
 table, th, td {
     border: 4px solid dodgerblue;
     border-collapse: separate;
     border-radius: 20px;
-    border-spacing:0 15px;
+    /*border-spacing:0 15px;*/
+    text-align: center;
 }
+
 td + td {
     margin-left: 0;
+    text-align: start;
 }
 th, td {
-    background-color: lightblue;
+    
     padding: 15px;
     position: relative
 }
+
+tr {
+    background-color: lightblue;
+}
+
+tr:nth-child(even) {
+    background-color: lightskyblue;
+}
+
 body {
     background-color: dodgerblue;
 }
 
-ul {
+.navbar-nav {
     list-style-type: none;
-}
-
-li {
-    float: left;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .nav-list-item {
     height: 26px;
+    margin-top: 3px;
 }
 
 .a-button {
@@ -34,10 +45,11 @@ li {
     box-shadow: 0 3px 0 blue;
     color: white;
     padding: 0.2em 0.5em;
-    margin: 40px 10px 40px;
+    margin: 3px;
     /*position: relative;*/
     text-decoration: none;
     text-transform: uppercase;
+    display: inline-flex;
 }
 
 a:hover {
@@ -62,10 +74,10 @@ a:active {
     position: absolute;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    body {
-        
+/* Small devices (landscape phones, 430px and up) */
+@media (min-width: 430px) {
+    .navbar-nav {
+        flex-direction: row;
     }
 }
 
