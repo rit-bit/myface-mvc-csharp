@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using MyFace.Models.Database;
 using MyFace.Models.Request;
 
@@ -11,6 +12,7 @@ namespace MyFace.Repositories
         IEnumerable<User> GetAll(int pageNumber, int pageSize);
         User GetById(int id);
         void Create(CreateUserRequestModel newUser);
+        void Delete(int userIdToDelete);
         public int Count();
     }
     
@@ -53,6 +55,14 @@ namespace MyFace.Repositories
             });
             _context.SaveChanges();
         }
+
+        public void Delete(int userIdToDelete)
+        {
+            var user = GetById(userIdToDelete);
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+        }
+
         public int Count()
         {
             return _context.Users.Count();

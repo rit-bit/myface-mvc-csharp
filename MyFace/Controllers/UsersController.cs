@@ -49,5 +49,17 @@ namespace MyFace.Controllers
             _users.Create(newUser);
             return RedirectToAction("UsersPage");
         }
+
+        [HttpGet("delete_{userIdToDelete}")]
+        public IActionResult DeleteUser(int userIdToDelete)
+        {
+            if (!ModelState.IsValid)
+            {
+                return UserPage(userIdToDelete);
+            }
+            
+            _users.Delete(userIdToDelete);
+            return RedirectToAction("UsersPage");
+        }
     }
 }

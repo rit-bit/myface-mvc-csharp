@@ -53,6 +53,10 @@ body {
     display: inline-flex;
 }
 
+.delete-button {
+    background-color: red;
+}
+
 .sticky-button-div-block {
     position: sticky;
     top: -1px;
