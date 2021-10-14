@@ -55,6 +55,7 @@ body {
 
 a:hover {
     background-color: royalblue;
+    cursor: pointer;
 }
 
 a:active {
