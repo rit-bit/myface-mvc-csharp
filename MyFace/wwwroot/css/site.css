@@ -15,7 +15,7 @@ td:nth-child(2) {
 
 th, td {
     padding: 15px;
-    position: relative
+    position: static
 }
 
 tr {
@@ -51,6 +51,15 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     display: inline-flex;
+}
+
+.sticky-button-div-block {
+    position: sticky;
+    top: -1px;
+    padding: 8px;
+    display: block;
+    opacity: 1;
+    background: dodgerblue;
 }
 
 a:hover {
