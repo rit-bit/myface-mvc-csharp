@@ -5,7 +5,6 @@ table, th, td {
     border-right-width: 2px;
     border-collapse: separate;
     border-radius: 20px;
-    /*border-spacing:-5 5px;*/
     text-align: center;
 }
 
@@ -13,8 +12,8 @@ td:nth-child(2) {
     margin-left: 0;
     text-align: start;
 }
+
 th, td {
-    
     padding: 15px;
     position: relative
 }
