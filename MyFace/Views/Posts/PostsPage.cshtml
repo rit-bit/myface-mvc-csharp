@@ -1,4 +1,6 @@
 ﻿@model MyFace.Models.View.PostsViewModel
+@using MyFace.Models.View
+@using Microsoft.AspNetCore.Html
 
 @{
     Layout = "_Layout";
@@ -10,12 +12,21 @@
 <table>
     @foreach (var post in @Model.Posts)
     {
-        var altText = $"Profile picture of {post.PostedBy.DisplayName}";
+        var altText = $"Profile picture of {@post.PostedBy.DisplayName}";
+        <tr>
+            <td>
+                <img src=@post.PostedBy.ProfileImageUrl alt=@altText style="width:50px" class="centre"> <b>@post.PostedBy.DisplayName</b>
+            </td>
+            <td>
+            <div>@post.Message.</div>
+            <div class="bottom-right">@post.PostedAt.ToString("t")</div></td>
+        </tr>;
+        /*var altText = $"Profile picture of {post.PostedBy.DisplayName}";
         //Console.WriteLine(altText);
         <tr>
             <td><img src=@post.PostedBy.ProfileImageUrl alt=@altText style="width:50px" class="centre"> <b>@post.PostedBy.DisplayName</b></td>
             <td><div>@post.Message.</div><div class="bottom-right">@post.PostedAt.ToString("t")</div></td>
-        </tr>
+        </tr>*/
     }
 </table>
 @{

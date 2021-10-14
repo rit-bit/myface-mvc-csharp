@@ -1,5 +1,39 @@
-﻿@model MyFace.Models.View.UserViewModel
+﻿@using MyFace.Models.View
+@using Microsoft.AspNetCore.Html
+@model MyFace.Models.View.UserViewModel
 
 @{
     Layout = "_Layout";
+    var profileAltText = "Profile picture of " + @Model.DisplayName;
+    var coverAltText = "Cover picture for " + @Model.DisplayName;
 }
+
+<table>
+    <thead>
+    <td>User ID</td>
+    <td>Username</td>
+    <td>Display Name</td>
+    <td>Email address</td>
+    <td>Profile picture</td>
+    <td>Cover picture</td>
+    </thead>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Username</td>
+        <td>@Model.DisplayName</td>
+        <td>@Model.Email</td>
+        <td><img src=@Model.ProfileImageUrl alt=@profileAltText style="width:50px" class="centre"/></td>
+        <td><img src=@Model.CoverImageUrl alt=@coverAltText style="width:50px" class="centre"/></td>
+    </tr>
+</table>
+
+<table>
+    @foreach (var post in Model.Posts)
+    {
+        <tr>
+            <td>
+                <div>@post.Message.</div>
+                <div class="bottom-right">@post.PostedAt.ToString("t")</div></td>
+        </tr>;
+    }
+</table>

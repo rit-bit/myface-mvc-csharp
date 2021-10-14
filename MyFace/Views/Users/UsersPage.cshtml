@@ -3,3 +3,39 @@
 @{
     Layout = "_Layout";
 }
+
+<table>
+    <thead>
+    <td>Username</td>
+    <td>Name</td>
+    <td>Profile picture</td>
+    </thead>
+    @foreach (var user in @Model.Users)
+    {
+        var altText = $"Profile picture of {user.ProfileImageUrl}";
+        <tr>
+            <td>@user.Username</td>
+            <td>
+                <a href="/Users/@user.Id">@user.DisplayName</a>
+            </td>
+            <td>
+                <img src=@user.ProfileImageUrl alt=@altText style="width:50px" class="centre">
+            </td>
+        </tr>
+    }
+</table>
+@{
+    string prevLink = $"/users?pageNumber={Model.PageNumber - 1}&pageSize={Model.PageSize}";
+    string nextLink = $"/users?pageNumber={Model.PageNumber + 1}&pageSize={Model.PageSize}";
+    if (Model.PageNumber > 0)
+    {
+        <a class="a-button" href=@prevLink>Prev</a>
+    }
+    var pagesRequired = (decimal) Model.TotalUsers / Model.PageSize;
+    var lastPageNumber = (int) (Math.Ceiling(pagesRequired) - 1);
+    // NB: lastPageNumber will not necessarily be correct if pageSize is changed and not reset to pageNumber = 0 
+    if (Model.PageNumber < lastPageNumber)
+    {
+        <a class="a-button" href=@nextLink>Next</a>
+    }
+}

@@ -11,6 +11,7 @@ namespace MyFace.Repositories
         IEnumerable<User> GetAll(int pageNumber, int pageSize);
         User GetById(int id);
         void Create(CreateUserRequestModel newUser);
+        public int Count();
     }
     
     public class UsersRepo : IUsersRepo
@@ -28,7 +29,7 @@ namespace MyFace.Repositories
                 .Include(u => u.Posts)
                 .Include(u => u.Interactions)
                 .OrderBy(u => u.Username)
-                .Skip((pageNumber - 1) * pageSize)
+                .Skip(pageNumber * pageSize)
                 .Take(pageSize);
         }
 
@@ -51,6 +52,10 @@ namespace MyFace.Repositories
                 CoverImageUrl = newUser.CoverImageUrl,
             });
             _context.SaveChanges();
+        }
+        public int Count()
+        {
+            return _context.Users.Count();
         }
     }
 }

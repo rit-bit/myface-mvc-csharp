@@ -16,10 +16,11 @@ namespace MyFace.Controllers
         }
         
         [HttpGet("")]
-        public IActionResult UsersPage(int pageNumber = 0, int pageSize = 10)
+        public IActionResult UsersPage(int pageNumber = 0, int pageSize = 2)
         {
             var users = _users.GetAll(pageNumber, pageSize);
-            var viewModel = new UsersViewModel(users);
+            var totalUsers = _users.Count();
+            var viewModel = new UsersViewModel(users, pageNumber, pageSize, totalUsers);
             return View(viewModel);
         }
 

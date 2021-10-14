@@ -11,7 +11,6 @@ namespace MyFace.Repositories
     {
         IEnumerable<Post> GetAll(int pageNumber, int pageSize);
         void CreatePost(CreatePostRequestModel postModel);
-
         public int Count();
     }
     
