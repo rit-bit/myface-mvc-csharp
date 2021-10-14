@@ -16,7 +16,7 @@ namespace MyFace.Controllers
         }
         
         [HttpGet("")]
-        public IActionResult UsersPage(int pageNumber = 0, int pageSize = 2)
+        public IActionResult UsersPage(int pageNumber = 0, int pageSize = 10)
         {
             var users = _users.GetAll(pageNumber, pageSize);
             var totalUsers = _users.Count();

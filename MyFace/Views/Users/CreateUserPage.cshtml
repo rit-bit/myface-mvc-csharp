@@ -3,3 +3,28 @@
 @{
     Layout = "_Layout";
 }
+
+<h1>Create a new user</h1>
+<form action="/users/create" method="POST">
+    
+    <label for="FirstName">First Name: </label>
+    <input type="text" name="FirstName" id="FirstName" maxlength="100"><br>
+    
+    <label for="LastName">Last Name: </label>
+    <input type="text" name="LastName" id="LastName" maxlength="100"><br>
+    
+    <label for="Email">Email: </label>
+    <input type="text" name="Email" id="Email" maxlength="100"><br>
+
+    <label for="Username">Username: </label>
+    <input type="text" name="Username" id="Username" maxlength="100"><br>
+
+    <label for="ProfileImageUrl">Profile Image URL: </label>
+    <input type="url" name="ProfileImageUrl" id="ProfileImageUrl"><br>
+
+    <label for="CoverImageUrl">Cover Image URL: </label>
+    <input type="url" name="CoverImageUrl" id="CoverImageUrl"><br>
+    
+    <input type="submit" value="Submit">
+
+</form>
