@@ -46,7 +46,7 @@ body {
     color: white;
     padding: 0.2em 0.5em;
     margin: 3px;
-    /*position: relative;*/
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     display: inline-flex;
